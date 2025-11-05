@@ -1,0 +1,49 @@
+:root {
+  /* Primary brand colors */
+  --color-teal-blue: #043c4c;
+  --color-loblolly: #c3c9cd;
+  --color-gumbo: #789ca4;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+}
+
+
+body {
+  background-color: var(--color-loblolly);
+  color: var(--color-teal-blue);
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  background-color: var(--color-teal-blue);
+  color: white;
+}
+
+button {
+  background-color: var(--color-gumbo);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-teal-blue);
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 990px;
+    margin: 0 auto;
+}
