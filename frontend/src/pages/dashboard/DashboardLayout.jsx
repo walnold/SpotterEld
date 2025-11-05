@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
-import "./dashboard.css"; // optional: create this for styles
+import "./Dashboard.css"; // optional: create this for styles
 
 const DashboardLayout = () => {
   return (
