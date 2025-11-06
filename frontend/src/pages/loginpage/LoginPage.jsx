@@ -1,61 +1,48 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext"; 
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const { login } = useAuth(); 
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
-  // State for form inputs
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission
   const handleLogin = (e) => {
     e.preventDefault();
-
     const { email, password } = formData;
 
-    // Basic validation
     if (!email || !password) {
       alert("Please fill in both email and password.");
       return;
     }
 
-    // Example logic — replace with real API call or authentication logic
     if (email === "admin@mail.com" && password === "123456") {
-      // Store login status (optional)
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("userEmail", email);
-
-      // Redirect to dashboard
-      navigate("/dashboard");
+      login(email); 
+      navigate("/dashboard", { replace: true });
     } else {
       alert("Invalid credentials. Try again!");
     }
   };
 
   return (
-    <div className="container">
-      <div className="login-form">
+    <div className="login-page">
+      <div className="login-box">
         <form onSubmit={handleLogin}>
-          <h1>Login</h1>
+          <h2>Welcome Back 👋</h2>
+          <p>Login to access your dashboard</p>
           <input
-            type="text"
+            type="email"
             name="email"
             placeholder="email@mail.com"
             value={formData.email}
             onChange={handleChange}
+            required
           />
           <input
             type="password"
@@ -63,16 +50,17 @@ const LoginPage = () => {
             placeholder="********"
             value={formData.password}
             onChange={handleChange}
+            required
           />
           <button type="submit">Login 🔒</button>
+          <p className="signup-text">
+            Don’t have an account?{" "}
+            <NavLink to="/signup" className="signup-link">
+              Sign up
+            </NavLink>
+          </p>
         </form>
       </div>
-      <p>
-        Don’t have an account?{" "}
-        <span>
-          <NavLink to="/signup">Sign up</NavLink>
-        </span>
-      </p>
     </div>
   );
 };

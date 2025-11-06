@@ -3,6 +3,9 @@
   --color-teal-blue: #043c4c;
   --color-loblolly: #c3c9cd;
   --color-gumbo: #789ca4;
+  --white: #ffffff;
+  --text-dark: #333;
+  --text-light: #666;
 }
 
 *{

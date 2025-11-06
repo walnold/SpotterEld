@@ -1,41 +1,118 @@
-.login-form {
+:root {
+  /* Primary brand colors */
+  --teal-blue: #043c4c;
+  --loblolly: #c3c9cd;
+  --gumbo: #789ca4;
+  --white: #ffffff;
+  --text-dark: #333;
+  --text-light: #666;
+}
+ .login-page {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  transform: translateY(-4rem);
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--loblolly) 0%, var(--gumbo) 100%);
+  padding: 1rem;
 }
 
-.login-form h1{
-    text-align: center;
+
+.login-box {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(4, 60, 76, 0.15);
+  width: 100%;
+  max-width: 400px;
+  transform: translateY(-2rem);
+  transition: all 0.3s ease;
 }
 
-.login-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
-  min-width: 350px;
-  padding: 2rem;
-  border: 1px solid var(--color-gumbo);
-  border-radius: 8px;
+.login-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(4, 60, 76, 0.2);
 }
 
-.login-form form input {
-  height: 2rem;
-  border-radius: 7px;
-  outline: transparent;
+
+.login-box h2 {
+  color: var(--teal-blue);
+  text-align: center;
+  margin-bottom: 0.25rem;
+  font-size: 1.8rem;
+}
+
+.login-box p {
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+
+.login-box input {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--gumbo);
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f8f9fa;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: var(--teal-blue);
+  background-color: #fff;
+}
+
+
+.login-box button {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--teal-blue);
+  color: var(--white);
   border: none;
-  padding-left: 4px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.login-form form input:focus {
-  outline: var(--color-gumbo);
+.login-box button:hover {
+  background: var(--color-gumbo);
+  transform: scale(1.02);
 }
 
-/* Respnsiveness */
+
+.signup-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.signup-link {
+  color: var(--teal-blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  color: var(--gumbo);
+  text-decoration: underline;
+}
 
 @media screen and (max-width: 600px) {
-  .login-form {
-    width: 90%;
+  .login-box {
+    padding: 2rem 1.5rem;
+    max-width: 90%;
+  }
+
+  .login-box h2 {
+    font-size: 1.5rem;
   }
 }
