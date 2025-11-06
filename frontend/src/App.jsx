@@ -1,8 +1,12 @@
 // src/App.jsx
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";
 
 const App = () => {
+  const { user } = useAuth();
+
+
   return (
     <div>
       {/* Simple Navbar Example */}
@@ -10,9 +14,12 @@ const App = () => {
         <Link to="/" style={{ marginRight: "1rem" }}>
           Home
         </Link>
-        <Link to="/dashboard" style={{ marginRight: "1rem" }}>
+
+        { user &&
+          <Link to="/dashboard" style={{ marginRight: "1rem" }}>
           Dashboard
         </Link>
+  }
         <Link to="/login" style={{ marginRight: "1rem" }}>
           Login
         </Link>

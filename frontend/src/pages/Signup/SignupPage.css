@@ -1,0 +1,92 @@
+:root {
+  --teal-blue: #043c4c;
+  --loblolly: #c3c9cd;
+  --gumbo: #789ca4;
+}
+
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--loblolly);
+}
+
+.signup-box {
+  background: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+}
+
+.signup-box h2 {
+  color: var(--teal-blue);
+  margin-bottom: 0.3rem;
+}
+
+.signup-box p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.signup-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-box input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--gumbo);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.signup-box input:focus {
+  outline: none;
+  border-color: var(--teal-blue);
+}
+
+.signup-box button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--teal-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.signup-box button:hover {
+  background: var(--gumbo);
+}
+
+.login-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  color: var(--teal-blue);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .signup-box {
+    padding: 2rem;
+    width: 90%;
+  }
+}
