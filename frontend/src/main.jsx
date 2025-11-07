@@ -15,6 +15,7 @@ import ActivityPage from "./pages/activity/ActivityPage.jsx";
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import SignupPage from "./pages/Signup/SignupPage.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
+import TripPage from "./pages/TripPage/TripPage.jsx";
 
 // Define routes
 const router = createBrowserRouter([
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
                 path: "trips",
                 element: <ActivityPage />,
                 children: [
-                  { index: true, element: <Trips /> },
+                  { index: true, element: <TripPage /> },
                   { path: "activities", element: <ActivityPage /> },
                 ],
               },
