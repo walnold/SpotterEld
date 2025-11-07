@@ -12,7 +12,7 @@ import DashboardLayout from "./pages/dashboard/DashboardLayout.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import ProfilePage from "./pages/Profile/ProfilePage.jsx";
 import ActivityPage from "./pages/activity/ActivityPage.jsx";
-import LoginPage from "./pages/LoginPage/LoginPage.jsx";
+import LoginPage from "./pages/loginpage/LoginPage.jsx";
 import SignupPage from "./pages/Signup/SignupPage.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
 import TripPage from "./pages/TripPage/TripPage.jsx";
